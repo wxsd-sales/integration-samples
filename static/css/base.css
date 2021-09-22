@@ -1,0 +1,215 @@
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+html {
+}
+
+body {
+}
+
+.main-height {
+  min-height: 800px;
+}
+
+.row.content {
+  margin-top: 10px;
+}
+
+.navbar-override {
+  margin-bottom: 10px;
+}
+
+.dark-color {
+  background-color: #222;
+}
+
+.blue-color {
+  background-color:#337ab7;
+  color:#fff;
+}
+
+.blue-font {
+  color:#337ab7;
+}
+
+.headerrow {
+  display: flex;
+  justify-content: center;
+}
+
+.mainrow {
+  width: max-content;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.alert-image {
+  height: 40px;
+  padding-bottom: 3px;
+}
+
+.left-spacer {
+  margin-left: 5px;
+}
+
+.right-float-img {
+  float:right;
+}
+
+.default-cursor {
+  cursor:default;
+}
+
+.enable-cursor {
+  cursor:pointer;
+}
+
+.disable-cursor {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+.warning-text {
+  position: relative;
+  padding: .1rem .5rem;
+  margin-bottom: 0;
+  margin-top: 5px;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  width: max-content;
+}
+
+.search-spinner {
+  position: absolute;
+}
+
+.high-div {
+  min-height: 64px;
+}
+
+.default-height-div {
+  min-height: auto;
+}
+
+.div-description {
+  font-size: 1rem;
+  display: inline;
+}
+
+.meetings-table {
+  background-color:white;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+
+.table-custom {
+  white-space: nowrap;
+}
+
+.scroll-cell {
+  display: block;
+  max-width: 250px;
+  overflow-x: scroll;
+}
+
+.search-div {
+  width:max-content;
+  margin:auto;
+  min-width: 355px;
+  max-width: 900px;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#close-form {
+  float:right;
+}
+
+.custom-checkbox {
+  margin-top: 4px;
+}
+
+.information {
+  max-width: 900px;
+  min-width: 400px;
+  padding: 10px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+	border-radius: 10px;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+	overflow-y: auto;
+}
+
+/* Set gray background color and 100% height */
+.customnav {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+.navbar-logo {
+  display: inline-block;
+  padding-top: .3125rem;
+  margin-right: 1rem;
+}
+
+.nav-button {
+  padding:10px 20px;
+}
+
+.nav-alt {
+  padding-right: 4px;
+  padding-left: 8px;
+}
+
+.nav-button-right {
+  float: right;
+  margin-left: 10px;
+}
+
+.main-logo {
+  height: 30px;
+  width: 30px;
+  float:right;
+}
+
+.avatar-logo {
+  border-radius: 50%;
+}
+
+/* On small screens, set height to 'auto' for the grid */
+@media screen and (max-width: 767px) {
+  .row.content {height: auto;}
+}
+
+.link-column {
+  display: inline-block;
+  padding: 0 15px;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+footer a {
+  color:white;
+}
