@@ -94,7 +94,7 @@ MY_WEBEX_SECRET=
 ```
 If you want to test [ZOOM](https://marketplace.zoom.us/develop/create) or [AZURE](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) integrations, you can uncomment these variables.  You will need to fill in the appropriate values when you register an app on those platforms.  When registering on those platforms, remember to set your redirect_uri values as the full url, like:
 * https://1234.eu.ngrok.io/azure-oauth
-* i.e. https://yourserver.com + MY_PLATFORM_REDIRECT_PATH
+* i.e. https://yourserver.com + MY_*PLATFORM*_REDIRECT_PATH
 
 ## License
 
