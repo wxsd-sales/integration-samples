@@ -2,7 +2,7 @@
 
 <html>
   <head>
-      <!-- Required meta tags -->
+      <!-- meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!-- Bootstrap CSS -->
@@ -18,10 +18,12 @@
       <script src="static/js/bootstrap-4.4.1.min.js"></script>
 
       <script type="text/javascript">
-        webexAvatar = "{{ webex_user.get('avatar') }}"; //these values inside brackets are passed into this html template by the backend (server.py)
+        //these variables inside brackets are passed into this html template (python-tornado) by the backend (server.py)
+        webexAvatar = "{{ webex_user.get('avatar') }}";
         console.log(webexAvatar);
         if(webexAvatar == "None"){
           webexAvatar = "static/img/user.png";
+        }
 
         zoomUser = "{{ zoom_user }}";
         console.log("zoomUser");
@@ -33,7 +35,6 @@
         console.log(msftUser);
         msftPath = "{{ msft_oauth_path }}";
 
-        }
       </script>
       <script src="static/js/main.js"></script>
 
@@ -57,22 +58,27 @@
         </header>
       </div>
       <div class="mainrow">
-        <h3>Step 1<img src="static/img/check-mark.png" class="alert-image left-spacer" /></h3>
+        <h3>Webex OAuth<img src="static/img/check-mark.png" class="alert-image left-spacer" /></h3>
         <div class="alert alert-success default-cursor" role="alert">
           <img src="static/img/webex-logo_128.png" class="alert-image" />
           Successfully Signed in to Webex!
           <img id="webexAvatar" src="" class="alert-image avatar-logo left-spacer right-float-img" />
         </div>
-        <h3>Step 2<img id="zoomNextStepImg" src="static/img/next-step.png" class="alert-image left-spacer" /><img id="zoomCompleteImg" src="static/img/check-mark.png" class="alert-image left-spacer" style="display:none"/></h3>
-        <div id="zoomSignInDiv" class="alert alert-primary enable-cursor" role="alert">
-          <button type="button" class="btn btn-primary">Sign In</button> to Zoom.
-          <img id="zoomRightArrowImg" src="static/img/right-arrow.png" class="alert-image left-spacer right-float-img" style="display:none" />
-        </div>
-        <h3>Step 3<img id="msftNextStepImg" src="static/img/next-step.png" class="alert-image left-spacer" style="display:none" /><img id="msftCompleteImg" src="static/img/check-mark.png" class="alert-image left-spacer" style="display:none"/></h3>
-        <div id="msftSignInDiv" class="alert alert-secondary disable-cursor" role="alert">
-          <button id="msftSignInButton" type="button" class="btn btn-primary">Sign In</button> to Microsoft.
-          <img id="msftRightArrowImg" src="static/img/right-arrow.png" class="alert-image left-spacer right-float-img" style="display:none" />
-        </div>
+        <!-- The Zoom div and Mircosoft Divs are optional-->
+        <!-- python-tornado's template system allows us to put these divs as conditionals -->
+        <!-- checkout the render() func in server.py for how the python variables are passed into this page/template -->
+        {% if zoom_oauth_path != None %}
+          <h3>Zoom OAuth <img id="zoomCompleteImg" src="static/img/check-mark.png" class="alert-image left-spacer" style="display:none"/></h3>
+          <div id="zoomSignInDiv" class="alert alert-primary enable-cursor" role="alert">
+            <button type="button" class="btn btn-primary">Sign In</button> to Zoom.
+          </div>
+        {% end %}
+        {% if msft_oauth_path != None %}
+          <h3>Microsoft Azure OAuth<img id="msftCompleteImg" src="static/img/check-mark.png" class="alert-image left-spacer" style="display:none"/></h3>
+          <div id="msftSignInDiv" class="alert alert-primary enable-cursor" role="alert">
+            <button id="msftSignInButton" type="button" class="btn btn-primary">Sign In</button> to Microsoft.
+          </div>
+        {% end %}
       </div>
     </body>
 </html>

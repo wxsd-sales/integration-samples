@@ -46,13 +46,6 @@ class MainHandler(BaseHandler):
         except Exception as e:
             traceback.print_exc()
 
-class TempHandler(BaseHandler):
-    @tornado.web.asynchronous
-    @tornado.gen.coroutine
-    def get(self):
-        print('temp handler!')
-        print(self.request.path)
-
 
 @tornado.gen.coroutine
 def main():
@@ -60,7 +53,6 @@ def main():
         parse_command_line()
         app = tornado.web.Application([
                 ("/", MainHandler),
-                ("/integration-samples", TempHandler),
                 (Settings.azure_redirect_path, AzureOAuthHandler),
                 (Settings.webex_redirect_path, WebexOAuthHandler),
                 (Settings.zoom_redirect_path, ZoomOAuthHandler)
