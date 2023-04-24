@@ -12,10 +12,7 @@
   </p>
 </p>
 
-## About The Project
-
-Video Walkthrough Coming Soon.
-
+## Overview
 
 ### Flow Diagram
 
@@ -24,7 +21,9 @@ Image courtesy of [Auth0](https://auth0.com/docs/authorization/flows/authorizati
 
 <!-- GETTING STARTED -->
 
-### Built With
+## Setup
+
+### Prerequisites & Dependencies: 
 
 python v3.7.4
 
@@ -97,8 +96,12 @@ If you want to test [ZOOM](https://marketplace.zoom.us/develop/create) or [AZURE
 * i.e. https://yourserver.com + MY_*PLATFORM*_REDIRECT_PATH
 
 ## License
+All contents are licensed under the MIT license. Please see [license](LICENSE) for details.
 
-Distributed under the MIT License. See `LICENSE` for more information.
+
+## Disclaimer
+<!-- Keep the following here -->  
+ Everything included is for demo and Proof of Concept purposes only. Use of the site is solely at your own risk. This site may contain links to third party content, which we do not warrant, endorse, or assume liability for. These demos are for Cisco Webex usecases, but are not Official Cisco Webex Branded demos.
 
 <!-- CONTACT -->
 
